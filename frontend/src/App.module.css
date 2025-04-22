@@ -1,8 +1,96 @@
-.navbar {
-  color: red;
-  background-color: black;
+.top {
+  background-color: #f2f2f2;
+  padding: 6px 20px;
+  font-size: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  color: #333;
 }
 
-.moj_styl {
-  color: blue;
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+  gap: 1rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.menuButton {
+  font-size: 24px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  min-width: 60px;
+  font-family: sans-serif;
+}
+.login span {
+  font-size: 32px;
+}
+.login p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: black;
+}
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.accountLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  font-size: 14px;
+  font-family: sans-serif;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+  font-size: 24px;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
