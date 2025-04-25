@@ -10,7 +10,22 @@ function RegisterPage() {
           Email:
           <input type="email" />
         </label>
-
+        <label>
+          First name:
+          <input type="text" />
+        </label>
+        <label>
+          Last name:
+          <input type="text" />
+        </label>
+        <label>
+          Phone number:
+          <input type="telefon" />
+        </label>
+        <label>
+          City:
+          <input type="text" />
+        </label>
         <label>
           Password:
           <input type="password" />
