@@ -22,6 +22,9 @@ function App() {
             <Link to="/repairman-login" className={styles.link}>
               🧰 Repairman zone
             </Link>
+            <Link to="/repairman-register" className={styles.link}>
+              📝 Register
+            </Link>
           </div>
         </div>
       </nav>

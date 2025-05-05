@@ -94,3 +94,19 @@
 .link:hover {
   text-decoration: underline;
 }
+
+.register-button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  margin-left: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}
+
