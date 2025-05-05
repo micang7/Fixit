@@ -1,0 +1,14 @@
+SELECT * FROM cennik;
+SELECT * FROM kategoria_uslugi;
+SELECT * FROM usluga;
+SELECT * FROM zlecenie;
+SELECT * FROM zlota_raczka;
+
+ALTER TABLE zlota_raczka RENAME "e-mail" TO email;
+
+INSERT INTO kategoria_uslugi(id_kategorii, nazwa) VALUES (5, 'usługi elektryczne');
+
+INSERT INTO usluga(id_uslugi, id_kategorii, nazwa) VALUES (2, 1, 'montaż pralki');
+
+INSERT INTO zlota_raczka(id_raczki, imie, nazwisko, telefon, email, miasto, id_uslugi) VALUES
+(2, 'felipe', 'konfi', '222222222','xd2@gmail.com', 'Toruń', 2);
