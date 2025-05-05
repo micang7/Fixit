@@ -4,52 +4,55 @@ import { useState } from "react";
 import axios from "axios";
 
 function RegisterPage() {
-    const [formData, setFormData] = useState({
-      email: "",
-      firstName: "",
-      lastName: "",
-      phone: "",
-      city: "",
-      password: "",
-      confirmPassword: "",
-});
+  const [formData, setFormData] = useState({
+    imie: "",
+    nazwisko: "",
+    telefon: "",
+    email: "",
+    miasto: "",
+    login: "",
+    haslo: "",
+    confirmPassword: "",
+  });
 
-const [error, setError] = useState("");
-const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormData((prev) => ({ ...prev, [name]: value }));
-};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (formData.password !== formData.confirmPassword) {
-    setError("Hasła nie są zgodne.");
-    setSuccess("");
-    return;
-  }
+    if (formData.haslo !== formData.confirmPassword) {
+      setError("Hasła nie są zgodne.");
+      setSuccess("");
+      return;
+    }
 
-  try {
-    setError("");
-    await axios.post("http://localhost:8080/zlota_raczka", {
-      email: formData.email,
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      phone: formData.phone,
-      city: formData.city,
-      password: formData.password,
-    });
+    try {
+      setError("");
+      await axios.post("http://localhost:8080/zlota_raczka", {
+        imie: formData.imie,
+        nazwisko: formData.nazwisko,
+        telefon: formData.telefon,
+        email: formData.email,
+        miasto: formData.miasto,
+        login: formData.login,
+        haslo: formData.haslo,
+      });
 
-    setSuccess("Rejestracja zakończona sukcesem!");
+      setSuccess("Rejestracja zakończona sukcesem!");
       setFormData({
+        imie: "",
+        nazwisko: "",
+        telefon: "",
         email: "",
-        firstName: "",
-        lastName: "",
-        phone: "",
-        city: "",
-        password: "",
+        miasto: "",
+        login: "",
+        haslo: "",
         confirmPassword: "",
       });
     } catch (err) {
@@ -63,17 +66,17 @@ const handleSubmit = async (e) => {
     <div className={styles.container}>
       <h2 className={styles.title}>Register</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
-      <label>
+        <label>
           First name:
-          <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
+          <input type="text" name="imie" value={formData.imie} onChange={handleChange} required />
         </label>
         <label>
           Last name:
-          <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
+          <input type="text" name="nazwisko" value={formData.nazwisko} onChange={handleChange} required />
         </label>
         <label>
           Phone number:
-          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+          <input type="tel" name="telefon" value={formData.telefon} onChange={handleChange} required />
         </label>
         <label>
           Email:
@@ -81,15 +84,15 @@ const handleSubmit = async (e) => {
         </label>
         <label>
           City:
-          <input type="text" name="city" value={formData.city} onChange={handleChange} required />
+          <input type="text" name="miasto" value={formData.miasto} onChange={handleChange} required />
         </label>
         <label>
-          login
-          <input type="login" name="Login" value={formData.login} onChange={handleChange} required />
+          Login:
+          <input type="text" name="login" value={formData.login} onChange={handleChange} required />
         </label>
         <label>
           Password:
-          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+          <input type="password" name="haslo" value={formData.haslo} onChange={handleChange} required />
         </label>
         <label>
           Confirm password:
