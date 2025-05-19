@@ -7,13 +7,23 @@ import java.util.List;
 
 @Service
 public class ZlecenieService {
-    public ZlecenieRepository zlecenieRepository;
+    private final ZlecenieStorage zlecenieStorage;
     @Autowired
-    public ZlecenieService(ZlecenieRepository zlecenieRepository) {
-        this.zlecenieRepository=zlecenieRepository;
+    public ZlecenieService(ZlecenieStorage zlecenieStorage) {
+        this.zlecenieStorage=zlecenieStorage;
     }
     public List<Zlecenie> getZlecenia() {
-        return zlecenieRepository.findAll().stream().map(ZlecenieEntity::toZlecenie).toList();
+        return zlecenieStorage.getZlecenia();
     }
 
+    public List<Zlecenie> getZlecenieByStatus(String status) {
+        return zlecenieStorage.getZlecenieByStatus(status);
+    }
+
+    public List<Zlecenie> getZlecenieByData(String dataWykonania) {
+        return zlecenieStorage.getZlecenieByData(dataWykonania);
+    }
+    public void createZlecenie(ZlecenieInsertDto zlecenie) {
+        zlecenieStorage.createZlecenie(Zlecenie.fromZlecenieInsertDto(zlecenie));
+    }
 }

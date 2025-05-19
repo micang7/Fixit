@@ -1,10 +1,9 @@
 package com.pema.fixit.Zlecenia;
 
+import com.pema.fixit.Uslugi.Usluga;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +18,22 @@ public class ZlecenieController {
     @ResponseBody
     public List<Zlecenie> getZlecenia() {
         return zlecenieService.getZlecenia();
+    }
+
+    @RequestMapping(value = "/zlecenie", params = {"status"})
+    @ResponseBody
+    public List<Zlecenie> getZlecenieByStatus(@RequestParam(value = "status") String status) {
+        return zlecenieService.getZlecenieByStatus(status);
+    }
+
+    @RequestMapping(value = "/zlecenie", params = {"data"})
+    @ResponseBody
+    public List<Zlecenie> getZlecenieByData(@RequestParam(value = "data") String dataWykonania) {
+        return zlecenieService.getZlecenieByData(dataWykonania);
+    }
+
+    @PostMapping("/zlecenie")
+    public void createZlecenie(ZlecenieInsertDto zlecenie) {
+        zlecenieService.createZlecenie(zlecenie);
     }
 }

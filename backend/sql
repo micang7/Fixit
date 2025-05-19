@@ -5,6 +5,13 @@ SELECT * FROM zlecenie;
 SELECT * FROM zlota_raczka;
 
 ALTER TABLE zlota_raczka RENAME "e-mail" TO email;
+ALTER TABLE zlecenie RENAME "e-mail_klienta" TO email_klienta;
+
+INSERT INTO zlota_raczka(id_raczki, imie, nazwisko, telefon, email, miasto, id_uslugi) VALUES
+(3, 'pedalini', 'czarnuchini', '123123123' , 'ig@gmail.com', 'Krzeszów', )
+
+INSERT INTO zlecenie(id_zlecenia, id_raczki, id_uslugi, imie_klienta, nazwisko_klienta, telefon_klienta, email_klienta, adres_wykonania, data_wykonania, opis, status, ocena) VALUES
+(2, 1, 1, 'Przemek', 'Gerwazy', '123123123', 'xd@gmail.com', 'architektów 16', '21.04.2025', 'tego typu', 'wykonane', 9);
 
 INSERT INTO kategoria_uslugi(id_kategorii, nazwa) VALUES (5, 'usługi elektryczne');
 
@@ -12,3 +19,5 @@ INSERT INTO usluga(id_uslugi, id_kategorii, nazwa) VALUES (2, 1, 'montaż pralki
 
 INSERT INTO zlota_raczka(id_raczki, imie, nazwisko, telefon, email, miasto, id_uslugi) VALUES
 (2, 'felipe', 'konfi', '222222222','xd2@gmail.com', 'Toruń', 2);
+
+SELECT * FROM zlota_raczka WHERE id_uslugi = 1;

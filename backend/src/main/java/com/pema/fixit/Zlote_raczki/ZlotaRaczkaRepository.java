@@ -9,5 +9,4 @@ import java.util.List;
 public interface ZlotaRaczkaRepository extends JpaRepository<ZlotaRaczkaEntity, Long> {
     List<ZlotaRaczkaEntity> findAll();
 
-    List<ZlotaRaczkaEntity> getAllByIdUslugi(int idUslugi);
 }

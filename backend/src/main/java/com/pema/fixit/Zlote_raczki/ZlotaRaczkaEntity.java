@@ -1,9 +1,6 @@
 package com.pema.fixit.Zlote_raczki;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +11,7 @@ public class ZlotaRaczkaEntity {
     @Getter
     @Id
     @Column(name = "id_raczki")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_raczki;
     @Setter
     @Getter
@@ -32,18 +30,27 @@ public class ZlotaRaczkaEntity {
     private String miasto;
     @Setter
     @Getter
-    private int idUslugi;
-    public ZlotaRaczkaEntity(long id_raczki, String imie, String nazwisko, String telefon, String email, String miasto, int idUslugi) {
+    private String login;
+    @Setter
+    @Getter
+    private String haslo;
+
+    public ZlotaRaczkaEntity(long id_raczki, String imie, String nazwisko, String telefon, String email, String miasto, String login, String haslo) {
         this.id_raczki = id_raczki;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.telefon = telefon;
         this.email = email;
         this.miasto = miasto;
-        this.idUslugi=idUslugi;
+        this.login = login;
+        this.haslo = haslo;
     }
     public ZlotaRaczka toZlotaRaczka() {
-        return new ZlotaRaczka(id_raczki, imie, nazwisko, telefon, email, miasto, idUslugi);
+        return new ZlotaRaczka(id_raczki, imie, nazwisko, telefon, email, miasto, login, haslo);
+    }
+
+    public static ZlotaRaczkaEntity fromZlotaRaczka(ZlotaRaczka zlotaRaczka) {
+        return new ZlotaRaczkaEntity(zlotaRaczka.getId_raczki(), zlotaRaczka.getImie(), zlotaRaczka.getNazwisko(), zlotaRaczka.getTelefon(), zlotaRaczka.getEmail(), zlotaRaczka.getMiasto(), zlotaRaczka.getLogin(), zlotaRaczka.getHaslo());
     }
     public ZlotaRaczkaEntity() {}
 }
