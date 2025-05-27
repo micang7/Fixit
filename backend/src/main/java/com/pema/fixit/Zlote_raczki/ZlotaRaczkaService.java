@@ -7,16 +7,17 @@ import java.util.List;
 
 @Service
 public class ZlotaRaczkaService {
-    private final ZlotaRaczkaRepository zlotaRaczkaRepository;
+    private final ZlotaRaczkaStorage zlotaRaczkaStorage;
     @Autowired
-    public ZlotaRaczkaService(ZlotaRaczkaRepository zlotaRaczkaRepository) {
-        this.zlotaRaczkaRepository = zlotaRaczkaRepository;
+    public ZlotaRaczkaService(ZlotaRaczkaStorage zlotaRaczkaStorage) {
+        this.zlotaRaczkaStorage= zlotaRaczkaStorage;
     }
     public List<ZlotaRaczka> getZloteRaczki() {
-        return zlotaRaczkaRepository.findAll().stream().map(ZlotaRaczkaEntity::toZlotaRaczka).toList();
+        return zlotaRaczkaStorage.getZloteRaczki();
     }
 
-    public List<ZlotaRaczka> getZlotaRaczkaByIdUslugi(int idUslugi) {
-        return zlotaRaczkaRepository.getAllByIdUslugi(idUslugi).stream().map(ZlotaRaczkaEntity::toZlotaRaczka).toList();
+
+    public void createZlotaRaczka(ZlotaRaczkaInsertDto zlotaRaczka) {
+        zlotaRaczkaStorage.createZlotaRaczka(ZlotaRaczka.fromZlotaRaczkaInsertDto(zlotaRaczka));
     }
 }

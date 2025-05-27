@@ -20,10 +20,10 @@ public class ZlotaRaczkaController {
         return zlotaRaczkaService.getZloteRaczki();
     }
 
-    @RequestMapping(value = "/zlota_raczka", params = {"usluga"})
-    @ResponseBody
-    public List<ZlotaRaczka> getZlotaRaczkaByIdUslugi(@RequestParam(value = "usluga") int idUslugi) {
-        return zlotaRaczkaService.getZlotaRaczkaByIdUslugi(idUslugi);
+
+    @PostMapping("/zlota_raczka")
+    public void createZlotaRaczka(@RequestBody ZlotaRaczkaInsertDto zlotaRaczka) {
+        zlotaRaczkaService.createZlotaRaczka(zlotaRaczka);
     }
 
 }

@@ -13,9 +13,6 @@ public class Usluga {
     @Setter
     @Getter
     private String nazwa;
-    @Setter
-    @Getter
-    private int cena;
 
     public Usluga(long id_uslugi, int id_kategorii, String nazwa) {
         this.id_uslugi = id_uslugi;

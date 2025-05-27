@@ -24,14 +24,32 @@ public class ZlotaRaczka {
     private String miasto;
     @Setter
     @Getter
-    private int idUslugi;
-    public ZlotaRaczka(long id_raczki, String imie, String nazwisko, String telefon, String email, String miasto, int idUslugi) {
+    private String login;
+    @Setter
+    @Getter
+    private String haslo;
+
+    public ZlotaRaczka(long id_raczki, String imie, String nazwisko, String telefon, String email, String miasto, String login, String haslo) {
         this.id_raczki = id_raczki;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.telefon = telefon;
         this.email = email;
         this.miasto = miasto;
-        this.idUslugi = idUslugi;
+        this.login = login;
+        this.haslo = haslo;
+    }
+    public ZlotaRaczka(String imie, String nazwisko, String telefon, String email, String miasto, String login, String haslo) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.telefon = telefon;
+        this.email = email;
+        this.miasto = miasto;
+        this.login = login;
+        this.haslo = haslo;
+    }
+
+    public static ZlotaRaczka fromZlotaRaczkaInsertDto(ZlotaRaczkaInsertDto zlotaRaczkaInsertDto) {
+        return new ZlotaRaczka(zlotaRaczkaInsertDto.getImie(), zlotaRaczkaInsertDto.getNazwisko(), zlotaRaczkaInsertDto.getTelefon(), zlotaRaczkaInsertDto.getEmail(), zlotaRaczkaInsertDto.getMiasto(), zlotaRaczkaInsertDto.getLogin(), zlotaRaczkaInsertDto.getHaslo());
     }
 }
