@@ -1,0 +1,21 @@
+.container {
+  padding: 20px;
+}
+
+.input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}

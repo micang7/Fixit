@@ -7,6 +7,9 @@ import RepairPage from "./components/customer/repairPage/RepairPage";
 import HomePage from "./components/repairman/homePage/HomePage";
 import LoginPage from "./components/repairman/loginPage/LoginPage";
 import RegisterPage from "./components/repairman/registerPage/RegisterPage";
+import OfferPage from "./components/customer/offerPage/OfferPage";
+import ServicesPage from "./components/customer/servicesPage/ServicesPage";
+import CategoriesPage from "./components/customer/categoriesPage/CategoriesPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -14,12 +17,14 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <SearchPage /> },
+      { path: "/", element: <CategoriesPage /> },
       { path: "customer-request", element: <RequestPage /> },
       { path: "customer-repair", element: <RepairPage /> },
       { path: "repairman-home", element: <HomePage /> },
       { path: "repairman-login", element: <LoginPage /> },
       { path: "repairman-register", element: <RegisterPage /> },
+      { path: "offer", element: <OfferPage /> },
+      { path: "services/:category", element: <ServicesPage /> },
     ],
   },
 ]);
