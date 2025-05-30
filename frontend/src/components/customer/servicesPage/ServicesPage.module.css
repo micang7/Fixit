@@ -1,4 +1,4 @@
-.container {
+/*.container {
   padding: 20px;
   max-width: 1000px;
   margin: auto;
@@ -57,4 +57,325 @@
   padding: 16px;
   border-radius: 12px;
   text-align: left;
+}*/
+
+/* ServicesPage.module.css */
+
+.pageContainer {
+    background: linear-gradient(to bottom right, #f1f5f9, #f9fafb, #fafaf9);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+.pageHeader {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.pageTitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+.pageSubtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mainContent {
+    width: 100%;
+    max-width: 90rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #e5e7eb;
+    position: relative;
+}
+
+    .card:hover {
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+.label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    transition: color 0.3s ease-in-out;
+}
+
+.card:hover .label {
+    color: #111827;
+}
+
+.chevron {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #9ca3af;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.card:hover .chevron {
+    color: #4b5563;
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.repairmenContainer {
+    width: 100%;
+    max-width: 90rem;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+    .backButton:hover {
+        background-color: #f3f4f6;
+        transform: translateX(-4px);
+    }
+
+.backIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.repairmenGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.repairmanCard {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
+}
+
+    .repairmanCard:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+.repairmanHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.repairmanName {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.repairmanCity {
+    font-size: 0.875rem;
+    color: #6b7280;
+    background-color: #f3f4f6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.repairmanDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.contactButton {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+    .contactButton:hover {
+        background-color: #2563eb;
+    }
+
+.noResults {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.1rem;
+    padding: 2rem;
+}
+
+.pageFooter {
+    margin-top: 4rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+    padding-bottom: 1rem;
+}
+
+/* Theme classes */
+.themeRenovation {
+    border-left: 4px solid #2563eb;
+}
+
+    .themeRenovation:hover {
+        background-color: #eff6ff;
+    }
+
+.themeKitchen {
+    border-left: 4px solid #16a34a;
+}
+
+    .themeKitchen:hover {
+        background-color: #f0fdf4;
+    }
+
+.themeHandyman {
+    border-left: 4px solid #ea580c;
+}
+
+    .themeHandyman:hover {
+        background-color: #fff7ed;
+    }
+
+.themeBasic {
+    border-left: 4px solid #0d9488;
+}
+
+    .themeBasic:hover {
+        background-color: #f0fdfa;
+    }
+
+/* Responsive styles */
+@media (min-width: 640px) {
+    .pageHeader {
+        margin-bottom: 4rem;
+    }
+
+    .pageTitle {
+        font-size: 3rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .label {
+        font-size: 1.125rem;
+    }
+
+    .repairmenGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .repairmenGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.backButton:hover {
+    background-color: #f3f4f6;
+    transform: translateX(-4px);
+}
+
+.backIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.pageTitle {
+    margin: 0;
+    width: 100%;
+    text-align: center;
 }
