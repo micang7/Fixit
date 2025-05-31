@@ -1,4 +1,4 @@
-.top {
+/*.top {
   background-color: #f2f2f2;
   padding: 6px 20px;
   font-size: 20px;
@@ -108,5 +108,155 @@
 
 .register-button:hover {
   background-color: #0056b3;
+}*/
+
+/* App.module.css */
+
+.pageContainer {
+    background: linear-gradient(to bottom right, #f1f5f9, #f9fafb, #fafaf9);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.navbar {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+    .logo:hover {
+        transform: scale(1.05);
+    }
+
+.contactInfo {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 2rem;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.contactIcon {
+    color: #3b82f6;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.accountLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+    .navLink:hover {
+        color: #1f2937;
+        background-color: #f3f4f6;
+    }
+
+.navIcon {
+    color: #3b82f6;
+}
+
+.registerLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #3b82f6;
+    transition: all 0.3s ease;
+}
+
+    .registerLink:hover {
+        background-color: #2563eb;
+        color: white;
+    }
+
+.mainContent {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    background-color: white;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Responsywnoœæ */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .contactInfo {
+        margin-left: 0;
+        gap: 1rem;
+    }
+
+    .accountLinks {
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .mainContent {
+        padding: 1rem;
+    }
+}
