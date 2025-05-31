@@ -1,4 +1,4 @@
-.container {
+/*.container {
   padding: 2rem;
   max-width: 800px;
   margin: auto;
@@ -33,4 +33,392 @@
 .canceled {
   background-color: #f8d7da;
   color: #721c24;
+}*/
+
+.pageContainer {
+    background: linear-gradient(to bottom right, #f1f5f9, #f9fafb, #fafaf9);
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.pageHeader {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.titleIcon {
+    padding: 0.75rem;
+    background-color: #eff6ff;
+    border-radius: 0.5rem;
+}
+
+.calendarIcon {
+    width: 2rem;
+    height: 2rem;
+    color: #2563eb;
+}
+
+.pageTitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.pageSubtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Empty State */
+.emptyState {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    padding: 3rem;
+    text-align: center;
+}
+
+.emptyIcon {
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyIconSvg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #9ca3af;
+}
+
+.emptyTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.emptyText {
+    color: #6b7280;
+}
+
+/* Requests Container */
+.requestsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Summary Card */
+.summaryCard {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    padding: 1rem;
+}
+
+.summaryContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summaryText {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.summaryStats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.statDotCompleted {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #0d9488;
+    border-radius: 50%;
+}
+
+.statDotCanceled {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #ef4444;
+    border-radius: 50%;
+}
+
+.statText {
+    color: #4b5563;
+}
+
+/* Request Cards */
+.card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+    .card:hover {
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        border-color: transparent;
+    }
+
+.completedCard:hover {
+    background-color: #f0fdfa;
+}
+
+.canceledCard:hover {
+    background-color: #fef2f2;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.serviceInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.serviceIcon {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.serviceIconCompleted {
+    background-color: #f0fdfa;
+}
+
+.serviceIconCanceled {
+    background-color: #fef2f2;
+}
+
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.serviceIconCompleted .icon {
+    color: #0d9488;
+}
+
+.serviceIconCanceled .icon {
+    color: #ef4444;
+}
+
+.serviceDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.serviceTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.card:hover .serviceTitle {
+    color: #374151;
+}
+
+.timeInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.smallIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.timeText {
+    font-size: 0.875rem;
+}
+
+/* Status */
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    border: 1px solid;
+}
+
+.completed {
+    background-color: #f0fdfa;
+    color: #0f766e;
+    border-color: #5eead4;
+}
+
+.canceled {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
+
+.statusIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+/* Card Content */
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.addressSection {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.addressIcon {
+    width: 1rem;
+    height: 1rem;
+    color: #db2777;
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+.addressText {
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+.clientSection {
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card:hover .clientSection {
+    background-color: #f3f4f6;
+}
+
+.clientHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.clientIcon {
+    width: 1rem;
+    height: 1rem;
+    color: #4f46e5;
+}
+
+.clientTitle {
+    font-weight: 500;
+    color: #111827;
+}
+
+.clientDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-left: 1.5rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.clientInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clientName {
+    font-weight: 500;
+}
+
+.contactIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+/* Footer */
+.pageFooter {
+    margin-top: 4rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+    padding-bottom: 1rem;
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+    .pageHeader {
+        margin-bottom: 4rem;
+    }
+
+    .pageTitle {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .summaryContent {
+        flex-direction: row;
+    }
+
+    .summaryStats {
+        gap: 2rem;
+    }
 }
